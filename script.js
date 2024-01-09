@@ -10,7 +10,7 @@ let discounted;
 let sconto;
 
 // CONTROLLO ERRORI
-if (isNaN(anni) || isNaN(distance)) {
+if (isNaN(anni) || isNaN(distance) || anni <= 0 || distance <= 0) {
   alert("I dati inseriti non sono corretti!");
 }
 // SCONTO MINORENNI
@@ -34,7 +34,7 @@ else if (anni > 65) {
 }
 // TARIFFA STANDARD
 else {
-  price = (distance * 0.21).toFixed(2);
+  price = parseFloat((distance * 0.21).toFixed(2));
   console.log(price);
   sconto = "Nessuno";
   discounted = price;
